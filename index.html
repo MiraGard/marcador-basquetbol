@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcador de Baloncesto All-School</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scoreboard-container">
+        <div class="scoreboard">
+            <div class="header-section">
+                <div class="logo-area">
+                    <!-- Placeholder para el logo de la Liga de Baloncesto de Jocotitlán -->
+                    <img src="https://placehold.co/120x80/FFA500/000000?text=LIGA+JOCOT.+BASKET" alt="Logo Liga Baloncesto Jocotitlan" class="league-logo">
+                </div>
+                <div class="quarter-display" id="quarter">CUARTO 1</div>
+            </div>
+
+            <div class="team-panel team-a">
+                <input type="text" id="team-a-name" value="EQUIPO LOCAL" class="team-name-input">
+                <div class="score-display" id="team-a-score">00</div>
+                <div class="score-buttons-group">
+                    <button class="score-btn" onclick="updateScore('a', 1)">+1 PT</button>
+                    <button class="score-btn" onclick="updateScore('a', 2)">+2 PTS</button>
+                    <button class="score-btn" onclick="updateScore('a', 3)">+3 PTS</button>
+                </div>
+                <div class="fouls-area">
+                    <span class="fouls-label">FALTAS COLECTIVAS:</span>
+                    <span id="team-a-fouls" class="fouls-count">0</span>
+                    <button class="foul-btn" onclick="updateFouls('a', 1)">+</button>
+                    <button class="foul-btn" onclick="updateFouls('a', -1)">-</button>
+                </div>
+            </div>
+
+            <div class="center-panel">
+                <div class="timer-display" id="time">10:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" onclick="startTimer()">INICIAR</button>
+                    <button class="timer-btn" onclick="stopTimer()">DETENER</button>
+                    <button class="timer-btn" onclick="resetTimer()">REINICIAR</button>
+                    <button class="timer-btn" onclick="nextQuarter()">SIG. CUARTO</button>
+                </div>
+                <button class="possession-btn" onclick="togglePossession()">POSESIÓN</button>
+                <div class="possession-arrow" id="possession-arrow"></div>
+            </div>
+
+            <div class="team-panel team-b">
+                <input type="text" id="team-b-name" value="EQUIPO VISITANTE" class="team-name-input">
+                <div class="score-display" id="team-b-score">00</div>
+                <div class="score-buttons-group">
+                    <button class="score-btn" onclick="updateScore('b', 1)">+1 PT</button>
+                    <button class="score-btn" onclick="updateScore('b', 2)">+2 PTS</button>
+                    <button class="score-btn" onclick="updateScore('b', 3)">+3 PTS</button>
+                </div>
+                <div class="fouls-area">
+                    <span class="fouls-label">FALTAS COLECTIVAS:</span>
+                    <span id="team-b-fouls" class="fouls-count">0</span>
+                    <button class="foul-btn" onclick="updateFouls('b', 1)">+</button>
+                    <button class="foul-btn" onclick="updateFouls('b', -1)">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+/* style.css */
+
+:root {
+    --main-blue: #0A2342; /* Azul marino profundo */
+    --accent-orange: #FFA500; /* Naranja vibrante */
+    --light-gray: #F0F0F0;
+    --dark-text: #222;
+    --white: #FFFFFF;
+}
+
+body {
+    background-color: var(--main-blue);
+    font-family: 'Roboto Mono', monospace; /* Fuente más "digital" o "all-school" */
+    color: var(--white);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.scoreboard-container {
+    width: 95%;
+    max-width: 1100px;
+    background-color: var(--dark-text); /* Fondo oscuro para el marcador */
+    padding: 20px;
+    border: 8px solid var(--accent-orange); /* Marco naranja */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr; /* Tres columnas para equipos y centro */
+    grid-template-rows: auto 1fr; /* Fila para el encabezado, fila para el resto */
+    gap: 20px;
+    align-items: start; /* Alineación vertical al inicio de las celdas */
+    justify-items: center; /* Alineación horizontal al centro de las celdas */
+}
+
+.header-section {
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+}
+
+.league-logo {
+    max-width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    border: 2px solid var(--accent-orange);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.quarter-display {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    font-size: 1.8em;
+    color: var(--accent-orange);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    padding: 5px 15px;
+    border: 2px solid var(--accent-orange);
+    border-radius: 5px;
+    background-color: rgba(255, 165, 0, 0.1);
+}
+
+.team-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    width: 100%; /* Ajuste para que ocupe el ancho de la columna en la grid */
+}
+
+.team-name-input {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    font-size: 1.3em;
+    text-align: center;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--accent-orange);
+    border-radius: 5px;
+    outline: none;
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 90%;
+    text-transform: uppercase;
+}
+
+.score-display {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    font-size: 5em;
+    font-weight: bold;
+    color: var(--accent-orange);
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+    min-width: 120px; /* Asegura un ancho mínimo para dos dígitos */
+}
+
+.score-buttons-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.score-btn {
+    background-color: var(--accent-orange);
+    color: var(--dark-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.score-btn:hover {
+    background-color: #FFC04D;
+    transform: translateY(-2px);
+}
+
+.fouls-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+    color: var(--light-gray);
+}
+
+.fouls-label {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.fouls-count {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--accent-orange);
+}
+
+.foul-btn {
+    background-color: var(--white);
+    color: var(--dark-text);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Botones redondos */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.foul-btn:hover {
+    background-color: var(--light-gray);
+}
+
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    height: 100%; /* Ocupa la altura disponible en la grid */
+}
+
+.timer-display {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    font-size: 4em;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    min-width: 180px; /* Asegura espacio para MM:SS */
+}
+
+.timer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timer-btn, .possession-btn {
+    background-color: var(--accent-orange);
+    color: var(--dark-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.timer-btn:hover, .possession-btn:hover {
+    background-color: #FFC04D;
+    transform: translateY(-2px);
+}
+
+.possession-btn {
+    width: 100%; /* Hace que el botón de posesión sea más ancho */
+    margin-top: 10px;
+}
+
+.possession-arrow {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    margin-top: 15px;
+    opacity: 0; /* Oculta por defecto */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.possession-arrow.active {
+    opacity: 1;
+    animation: pulse-arrow 1.5s infinite alternate;
+}
+
+.possession-arrow.left {
+    transform: rotate(180deg);
+}
+
+.possession-arrow.right {
+    transform: rotate(0deg);
+}
+
+@keyframes pulse-arrow {
+    from { color: var(--white); transform: scale(0.9); }
+    to { color: var(--accent-orange); transform: scale(1.1); }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .scoreboard-container {
+        padding: 15px;
+    }
+    .scoreboard {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        grid-template-rows: auto auto auto auto; /* Filas para header, equipo A, centro, equipo B */
+    }
+    .header-section {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 0; /* Eliminar margen inferior si se convierte en columna */
+        border-bottom: none;
+    }
+    .quarter-display {
+        font-size: 1.5em;
+    }
+    .team-panel, .center-panel {
+        width: 100%;
+        padding: 10px;
+    }
+    .score-display {
+        font-size: 4em;
+    }
+    .timer-display {
+        font-size: 3em;
+    }
+    .score-buttons-group, .fouls-area, .timer-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .score-btn, .timer-btn, .possession-btn {
+        padding: 8px 12px;
+        font-size: 0.75em;
+    }
+    .foul-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 1em;
+    }
+    .possession-arrow {
+        font-size: 2.5em;
+    }
+}
+
